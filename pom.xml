@@ -65,6 +65,46 @@
                     <target>17</target>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>com.akathist.maven.plugins.launch4j</groupId>
+                <artifactId>launch4j-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>l4j-clui</id>
+                        <phase>package</phase>
+                        <goals><goal>launch4j</goal></goals>
+                        <configuration>
+                            <headerType>console</headerType>
+                            <outfile>target/telegram-0.0.1.exe</outfile>
+                            <jar>target/telegram-0.0.1-SNAPSHOT.jar</jar>
+                            <errTitle>encc</errTitle>
+                            <classPath>
+                                <mainClass>org.springframework.boot.loader.JarLauncher</mainClass>
+                                <addDependencies>false</addDependencies>
+                                <preCp>anything</preCp>
+                            </classPath>
+                            <jre>
+                                <minVersion>1.8</minVersion>
+                                <opts>
+                                    <!--opt>-Djava.endorsed.dirs=./endorsed</opt-->
+                                    <opt>-Dfile.encoding=UTF-8</opt>
+                                </opts>
+                            </jre>
+                            <versionInfo>
+                                <fileVersion>1.2.3.4</fileVersion>
+                                <txtFileVersion>txt file version?</txtFileVersion>
+                                <fileDescription>telegram-0.0.1</fileDescription>
+                                <copyright>my copyright</copyright>
+                                <productVersion>4.3.2.1</productVersion>
+                                <txtProductVersion>txt product version</txtProductVersion>
+                                <productName>telegram-bot</productName>
+                                <internalName>telegram-bot</internalName>
+                                <originalFilename>telegram-bot.exe</originalFilename>
+                            </versionInfo>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
     <repositories>
