@@ -6,3 +6,5 @@ bot:
   username: DotaPredictionBot
   # токен бота
   token: 5038425688:AAHaocT9ZZ_GutHC1TIHGhiXIHonZLtwvgI
+  # идентификатор чата для сообщений
+  chatId: -661901852

@@ -19,4 +19,8 @@ public class BotConfig {
      * Токен бота полученный у @BotFather
      */
     private String token;
+    /**
+     * идентификатор чата для сообщений
+     */
+    private String chatId;
 }

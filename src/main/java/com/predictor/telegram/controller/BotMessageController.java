@@ -1,6 +1,7 @@
 package com.predictor.telegram.controller;
 
 import com.predictor.telegram.SayPredictionBot;
+import com.predictor.telegram.config.BotConfig;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -22,6 +23,7 @@ import java.util.List;
 @AllArgsConstructor
 public class BotMessageController {
     private final SayPredictionBot bot;
+    private final BotConfig botConfig;
 
     /**
      * Отправка сообщения ботом
@@ -33,7 +35,7 @@ public class BotMessageController {
     public ResponseEntity<?> sendMessage(@RequestParam String message) {
         SendMessage botMessage = SendMessage
                 .builder()
-                .chatId("-661901852")
+                .chatId(botConfig.getChatId())
                 .text(message)
                 .parseMode(ParseMode.HTML)
                 .build();
@@ -75,7 +77,7 @@ public class BotMessageController {
 
         SendMessage botMessage = SendMessage
                 .builder()
-                .chatId("-661901852")
+                .chatId(botConfig.getChatId())
                 .text(msgString)
                 .disableWebPagePreview(true)
                 .entities(List.of(MessageEntity.builder()
@@ -136,7 +138,7 @@ public class BotMessageController {
 
         SendMessage botMessage = SendMessage
                 .builder()
-                .chatId("-661901852")
+                .chatId(botConfig.getChatId())
                 .text(String.format(msgString, radiantHeroes, direHeroes, prediction))
                 .disableWebPagePreview(true)
                 .entities(List.of(MessageEntity.builder()
@@ -186,7 +188,7 @@ public class BotMessageController {
 
         SendMessage botMessage = SendMessage
                 .builder()
-                .chatId("-661901852")
+                .chatId(botConfig.getChatId())
                 .text(String.format(msgString, radiantTeam, direTeam, radiantHeroes, direHeroes, prediction))
                 .disableWebPagePreview(true)
                 .entities(List.of(MessageEntity.builder()
