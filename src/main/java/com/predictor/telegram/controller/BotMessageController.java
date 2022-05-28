@@ -159,6 +159,11 @@ public class BotMessageController {
     /**
      * Отправка сообщения ботом
      *
+     * @param radiantHeroes герои radiant
+     * @param radiantTeam название тимы radiant
+     * @param direHeroes герои dire
+     * @param direTeam название тимы dire
+     * @param prediction предсказание
      * @return ОК - сообщение отправлено
      */
     @PostMapping(value = "/msg4")
@@ -201,32 +206,3 @@ public class BotMessageController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }
-
-/*
-
-[MessageEntity(type=bold, offset=37, length=23, url=null, user=null, language=null, text=Выбранные герои Radiant),
-MessageEntity(type=bold, offset=119, length=20, url=null, user=null, language=null, text=Выбранные герои Dire),
-MessageEntity(type=text_link, offset=202, length=55, url=https://ru.dotabuff.com/esports/leagues/14072-dpc-sa-division-ii-tour-2-2021-2022-by-4d-esports, user=null, language=null, text=DPC WEU Division II Tour 2 - 2021/2022 -by 4D Esports
-
-), MessageEntity(type=bold, offset=284, length=12, url=null, user=null, language=null, text=18:07 - Wolf),
-MessageEntity(type=bold, offset=340, length=6, url=null, user=null, language=null, text=1.35
-
-), MessageEntity(type=text_link, offset=362, length=10, url=https://ru.dotabuff.com/matches/6520430616, user=null, language=null, text=6520430616)]
-
-
-
-
-
-
-
-0={MessageEntity@8677}"MessageEntity(type=bold, offset=37, length=7, url=null, user=null, language=null, text=Карта: )"
-        1={MessageEntity@8678}"MessageEntity(type=bold, offset=46, length=23, url=null, user=null, language=null, text=Выбранные герои Radiant)"
-        2={MessageEntity@8679}"MessageEntity(type=bold, offset=128, length=20, url=null, user=null, language=null, text=Выбранные герои Dire)"
-        3={MessageEntity@8680}"MessageEntity(type=bold, offset=211, length=31, url=null, user=null, language=null, text=Преимущество radiant по героям:)"
-        4={MessageEntity@8681}"MessageEntity(type=text_link, offset=248, length=55, url=https://ru.dotabuff.com/esports/leagues/14072-dpc-sa-division-ii-tour-2-2021-2022-by-4d-esports, user=null, language=null, text=DPC WEU Division II Tour 2 - 2021/2022 -by 4D Esports\n\n)"
-        5={MessageEntity@8682}"MessageEntity(type=bold, offset=330, length=12, url=null, user=null, language=null, text=18:07 - Wolf)"
-        6={MessageEntity@8683}"MessageEntity(type=bold, offset=386, length=6, url=null, user=null, language=null, text=1.35\n\n)"
-        7={MessageEntity@8684}"MessageEntity(type=text_link, offset=408, length=10, url=https://ru.dotabuff.com/matches/6520430616, user=null, language=null, text=6520430616)"
-
-
- */
