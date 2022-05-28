@@ -174,8 +174,7 @@ public class BotMessageController {
                                           @RequestParam String direHeroes,
                                           @RequestParam String direTeam,
                                           @RequestParam String prediction) {
-        log.info(String.valueOf(radiantHeroes));
-        log.info(String.valueOf(direHeroes));
+        log.info("Пришло сообщение {} (radiant) против {} (dire) предсказание: {} ", radiantTeam, direTeam, prediction);
 
         String msgString = """
                 %s (radiant) 🆚 %s (dire)
